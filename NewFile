@@ -1,0 +1,116 @@
+import java.sql.SQLOutput;
+import java .util.Scanner ;
+
+class FlightDetails{
+    Scanner sc = new Scanner(System.in);
+    public FlightDetails() {
+        System.out.println(" You are Accessing the data related to the flight :  :");
+    }
+   private  long planeID;
+    int departT ;  String NameFlight ,PilotName ; String FDestination ; String FTakeoff;
+    public void setFlightDetails(){
+        System.out.println("Enter the flight details : ");
+        System.out.print("Enter the flightID : ");
+         planeID = sc.nextLong();
+        System.out.print("Enter the time of departure ( 24 hrs Format): ");
+         departT = sc.nextInt();
+        System.out.println("Enter the Name of the flight : ");
+        NameFlight = sc.next();
+        System.out.print(" Destination Location : ");
+       FDestination = sc.next();
+        System.out.print("Enter the take of location  : ");
+         FTakeoff = sc.next();
+         System.out.print("Enter Pilot Name : ");
+         PilotName =sc.next();
+
+    }
+    void getFlightDetails (){
+        System.out.println( " \n The flighId  : "+planeID +
+                "\n The Time  : "+departT +
+                 "\n The name  : " + NameFlight +
+                "\n The Flight Destination : " + FDestination +
+                "\n The takeoff Location" +  FTakeoff
+
+        );
+    }
+}
+class Employee extends FlightDetails{
+    String EmpName , Skill , Designation ;
+    int Salary , EmpID ; byte  age ;
+    public Employee() {
+        System.out.println("Now you are accessing the Employee Details ");
+    }
+    void setEmpDetails(){
+        System.out.println("Enter Employee ID  : ");
+        EmpID= sc.nextInt();
+        System.out.println("Enter Employee Name  : ");
+        EmpName= sc.next();
+        System.out.println("Enter Employee Skill  : ");
+        Skill= sc.next();
+        System.out.println("Enter Employee Designation  : ");
+        Designation= sc.next();
+        System.out.println("Enter Employee Salary  : ");
+        Salary= sc.nextInt();
+        System.out.println("Enter Employee age  : ");
+        age= sc.nextByte();
+    }
+    void getEmpDetails(){
+        System.out.println(
+                "\n Employee ID "+EmpID +
+                "\n Employee Name : "+EmpName +
+                "\n Employee Skill : " + Skill+
+                "\n Employee Designation : " + Designation +
+                "\n Employee Salary : "+Salary +
+                "\n Employee age : " +age
+                );
+    }
+}
+class Passanger extends Employee{
+
+    private String name;
+    private int age;
+    private String destination;
+    private String adharnumber;
+
+
+
+
+
+    public void setPassangerData() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Welcome to the Airline Reservation System!");
+        System.out.print("Enter your name: ");
+        this.name = scanner.nextLine();
+
+        System.out.print("Enter your Aadharcard Number:");
+        this.adharnumber = scanner.nextLine();
+        scanner.nextLine();
+
+        System.out.print("Enter your age: ");
+        this.age = scanner.nextInt();
+        scanner.nextLine(); // Consume the newline character
+
+        System.out.print("Enter your destination: ");
+        this.destination = scanner.nextLine();
+    }
+
+    // Method to display customer information
+    public void getPassangerData() {
+        System.out.println("\nCustomer Information:");
+        System.out.println("Name: " + name);
+        System.out.println("Aadhar Card Number: " + adharnumber);
+        System.out.println("Age: " + age);
+        System.out.println("Destination: " + destination);
+    }}
+class AWS{
+    public static void main(String[] args) {
+        System.out.println("Enter <1> to display Flight Details :"//getFlightDetails
+                +"Enter <2> to display Employee Details :"//getEmpDetails
+                +"Enter <3> to display Passanger Details :"//setPassangerData
+                + "Enter < 4 > to Add Flight Details  "  //setFlightDetails ;
+                +"\n Enter < 5 > to Add Employee Details : " //setEmpDetails
+                +"\nEnter < 6 > to Add Person Details " //setPassangerData
+        );
+    }
+}
